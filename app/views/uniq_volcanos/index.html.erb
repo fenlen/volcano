@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Uniq Volcanos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Country</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Elevation</th>
+      <th>Type</th>
+      <th>Status</th>
+      <th>Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @uniq_volcanos.each do |uniq_volcano| %>
+      <tr>
+        <td><%= uniq_volcano.Name %></td>
+        <td><%= uniq_volcano.Location %></td>
+        <td><%= uniq_volcano.Country %></td>
+        <td><%= uniq_volcano.Latitude %></td>
+        <td><%= uniq_volcano.Longitude %></td>
+        <td><%= uniq_volcano.Elevation %></td>
+        <td><%= uniq_volcano.Type %></td>
+        <td><%= uniq_volcano.Status %></td>
+        <td><%= uniq_volcano.Time %></td>
+        <td><%= link_to 'Show', uniq_volcano %></td>
+        <td><%= link_to 'Edit', edit_uniq_volcano_path(uniq_volcano) %></td>
+        <td><%= link_to 'Destroy', uniq_volcano, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Uniq Volcano', new_uniq_volcano_path %>

@@ -1,0 +1,62 @@
+<%= form_with(model: uniq_volcano, local: true) do |form| %>
+  <% if uniq_volcano.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(uniq_volcano.errors.count, "error") %> prohibited this uniq_volcano from being saved:</h2>
+
+      <ul>
+      <% uniq_volcano.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Name %>
+    <%= form.text_area :Name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Location %>
+    <%= form.text_area :Location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Country %>
+    <%= form.text_area :Country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Latitude %>
+    <%= form.text_field :Latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Longitude %>
+    <%= form.text_field :Longitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Elevation %>
+    <%= form.number_field :Elevation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Type %>
+    <%= form.text_area :Type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Status %>
+    <%= form.text_area :Status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Time %>
+    <%= form.text_area :Time %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

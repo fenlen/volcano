@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @uniq_volcano.Name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @uniq_volcano.Location %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @uniq_volcano.Country %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @uniq_volcano.Latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @uniq_volcano.Longitude %>
+</p>
+
+<p>
+  <strong>Elevation:</strong>
+  <%= @uniq_volcano.Elevation %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @uniq_volcano.Type %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @uniq_volcano.Status %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @uniq_volcano.Time %>
+</p>
+
+<%= link_to 'Edit', edit_uniq_volcano_path(@uniq_volcano) %> |
+<%= link_to 'Back', uniq_volcanos_path %>

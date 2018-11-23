@@ -1,0 +1,2 @@
+class UniqVolcano < ApplicationRecord
+end

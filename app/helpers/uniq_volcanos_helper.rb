@@ -1,0 +1,2 @@
+module UniqVolcanosHelper
+end
