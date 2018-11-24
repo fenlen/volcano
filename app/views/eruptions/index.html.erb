@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Eruptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Month</th>
+      <th>Day</th>
+      <th>Tsu</th>
+      <th>Eq</th>
+      <th>Vei</th>
+      <th>Agent</th>
+      <th>Deaths</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @eruptions.each do |eruption| %>
+      <tr>
+        <td><%= eruption.year %></td>
+        <td><%= eruption.month %></td>
+        <td><%= eruption.day %></td>
+        <td><%= eruption.tsu %></td>
+        <td><%= eruption.eq %></td>
+        <td><%= eruption.vei %></td>
+        <td><%= eruption.agent %></td>
+        <td><%= eruption.deaths %></td>
+        <td><%= link_to 'Show', eruption %></td>
+        <td><%= link_to 'Edit', edit_eruption_path(eruption) %></td>
+        <td><%= link_to 'Destroy', eruption, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Eruption', new_eruption_path %>

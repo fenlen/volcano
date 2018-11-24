@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe UniqVolcano, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "is not valid without a name" do
+    volcano = UniqVolcano.first
+    expect(volcano).to be_valid
+  end
 end

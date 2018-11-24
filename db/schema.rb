@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_23_192543) do
+ActiveRecord::Schema.define(version: 2018_11_24_214222) do
+
+  create_table "eruptions", force: :cascade do |t|
+    t.integer "Year"
+    t.integer "Month"
+    t.integer "Day"
+    t.boolean "Tsu"
+    t.boolean "Eq"
+    t.text "Agent"
+    t.decimal "Latitude"
+    t.decimal "Longitude"
+    t.integer "Deaths"
+    t.integer "uniq_volcano_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["uniq_volcano_id"], name: "index_eruptions_on_uniq_volcano_id"
+  end
 
   create_table "uniq_volcanos", force: :cascade do |t|
     t.text "Name"

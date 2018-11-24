@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @eruption.year %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @eruption.month %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @eruption.day %>
+</p>
+
+<p>
+  <strong>Tsu:</strong>
+  <%= @eruption.tsu %>
+</p>
+
+<p>
+  <strong>Eq:</strong>
+  <%= @eruption.eq %>
+</p>
+
+<p>
+  <strong>Vei:</strong>
+  <%= @eruption.vei %>
+</p>
+
+<p>
+  <strong>Agent:</strong>
+  <%= @eruption.agent %>
+</p>
+
+<p>
+  <strong>Deaths:</strong>
+  <%= @eruption.deaths %>
+</p>
+
+<%= link_to 'Edit', edit_eruption_path(@eruption) %> |
+<%= link_to 'Back', eruptions_path %>
