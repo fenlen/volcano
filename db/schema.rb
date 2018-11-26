@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_24_214222) do
+ActiveRecord::Schema.define(version: 2018_11_25_235621) do
 
   create_table "eruptions", force: :cascade do |t|
     t.integer "Year"
@@ -38,6 +38,13 @@ ActiveRecord::Schema.define(version: 2018_11_24_214222) do
     t.text "Type"
     t.text "Status"
     t.text "Time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
