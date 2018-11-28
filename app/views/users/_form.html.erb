@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div class="field">
     <%= form.label :password %>
     <%= form.password_field :password %>
   </div>
@@ -24,6 +29,13 @@
   <div class="field">
     <%= form.label :password_confirmation %>
     <%= form.password_field :password_confirmation %>
+  </div>
+
+  <div class="field">
+    <%= form.radio_button(:admin, true) %>
+    <%= form.label(:admin, "True") %>
+    <%= form.radio_button(:admin, false) %>
+    <%= form.label(:admin, "False") %>
   </div>
 
   <div class="actions">

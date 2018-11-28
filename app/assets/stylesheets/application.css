@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,3 +14,15 @@
  *= require_tree .
  *= require_self
  */
+html {
+  position: relative;
+  min-height: 100%; }
+body {
+  display: flex;
+  background-color: #dde2ee;
+  margin: 0 0 0px;
+  width: auto;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px; }
+ 

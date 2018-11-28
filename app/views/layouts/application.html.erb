@@ -4,12 +4,16 @@
     <title>Volcano</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div>
+      <img class="banner" src="/assets/banner.png">
+    </div>
     <div class="w3-bar w3-black">
       <a href="/" class="w3-bar-item w3-button">Home</a>
       <a href="/uniq_volcanos" class="w3-bar-item w3-button">Volcanoes</a>

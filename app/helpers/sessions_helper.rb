@@ -16,6 +16,13 @@ module SessionsHelper
    end
   end
 
+  def admin?
+    if User.find_by(id: session[:user_id]).admin = true
+      return true
+    else
+      return false
+    end
+  end
  # Logs out the current user.
   def log_out
     session.delete(:user_id)
