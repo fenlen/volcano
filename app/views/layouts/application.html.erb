@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    <div id="header">
     <div>
       <img class="banner" src="/assets/banner.png">
     </div>
@@ -18,10 +19,17 @@
       <a href="/" class="w3-bar-item w3-button">Home</a>
       <a href="/uniq_volcanos" class="w3-bar-item w3-button">Volcanoes</a>
       <a href="/eruptions" class="w3-bar-item w3-button">Eruptions</a>
-      <a href="/login" class="w3-bar-item w3-button">Log in</a>
+      <% if logged_in? %>
       <a href="/logout" class="w3-bar-item w3-button">Log out</a>
+      <% if admin? %>
+      <a href="/dashboard" class="w3-bar-item w3-button w3-right">Admin dashboard</a>
+      <% end %>
+      <% else %>
+      <a href="/login" class="w3-bar-item w3-button">Log in</a>
+      <% end %>
       
       
+    </div>
     </div>
     <%= yield %>
   </body>

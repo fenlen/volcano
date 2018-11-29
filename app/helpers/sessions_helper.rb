@@ -11,8 +11,11 @@ module SessionsHelper
 
  # Returns true if the user is logged in, false otherwise.
  def logged_in?
-  unless User.find_by(id: session[:user_id])
-     redirect_to login_url, notice: "Please log in"
+  if User.find_by(id: session[:user_id])
+    return true
+  else
+    # return false
+    #  redirect_to login_url, notice: "Please log in"
    end
   end
 
