@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :orders
+  resources :line_items
+  resources :carts
   get 'dashboard/index'
   get '/login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

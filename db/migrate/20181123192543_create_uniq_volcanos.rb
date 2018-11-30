@@ -9,6 +9,7 @@ class CreateUniqVolcanos < ActiveRecord::Migration[5.2]
       t.integer :Elevation
       t.text :Type
       t.text :Status
+      t.integer :Price
       t.text :Time
 
       t.timestamps

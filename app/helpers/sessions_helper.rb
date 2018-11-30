@@ -20,7 +20,7 @@ module SessionsHelper
   end
 
   def admin?
-    if User.find_by(id: session[:user_id]).admin = true
+    if User.find_by(id: session[:user_id]).admin == true
       return true
     else
       return false
@@ -30,5 +30,8 @@ module SessionsHelper
   def log_out
     session.delete(:user_id)
     @current_user = nil
+    if @cart
+      @cart.destroy
+    end
   end
 end

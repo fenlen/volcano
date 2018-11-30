@@ -1,6 +1,7 @@
 class UniqVolcanosController < ApplicationController
   before_action :set_uniq_volcano, only: [:show, :edit, :update, :destroy]
-
+  include CurrentCart
+  before_action :set_cart
   # GET /uniq_volcanos
   # GET /uniq_volcanos.json
   def index

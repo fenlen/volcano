@@ -19,6 +19,7 @@ csvVolcanoes.each do |row|
     t.Elevation = row['Elevation']
     t.Type = row['Type']
     t.Status = row['Status']
+    t.Price = row['Elevation'].to_i * 100
     t.Time = row['Time']
     t.save
 end

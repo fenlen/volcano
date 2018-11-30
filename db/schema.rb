@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_25_235621) do
+ActiveRecord::Schema.define(version: 2018_11_30_001446) do
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "eruptions", force: :cascade do |t|
     t.integer "Year"
@@ -28,6 +33,25 @@ ActiveRecord::Schema.define(version: 2018_11_25_235621) do
     t.index ["uniq_volcano_id"], name: "index_eruptions_on_uniq_volcano_id"
   end
 
+  create_table "line_items", force: :cascade do |t|
+    t.integer "uniq_volcano_id"
+    t.integer "cart_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "quantity", default: 1
+    t.integer "order_id"
+    t.index ["cart_id"], name: "index_line_items_on_cart_id"
+    t.index ["order_id"], name: "index_line_items_on_order_id"
+    t.index ["uniq_volcano_id"], name: "index_line_items_on_uniq_volcano_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "uniq_volcanos", force: :cascade do |t|
     t.text "Name"
     t.text "Location"
@@ -37,6 +61,7 @@ ActiveRecord::Schema.define(version: 2018_11_25_235621) do
     t.integer "Elevation"
     t.text "Type"
     t.text "Status"
+    t.integer "Price"
     t.text "Time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,12 +1,20 @@
+<div class="sidebar">
+<% if @cart %>
+<%= render @cart %>
+<div class="actions">
+<%= button_to 'Empty cart', @cart, method: :delete,
+    data: { confirm: 'Are you sure?' } %>
+<%= button_to 'Checkout', new_order_path, method: :get, class: "checkout"%>
+</div>
+<% end %>
+</div>
+<div class="volcanowrap">
 <p id="notice"><%= notice %></p>
-
 <h1>Uniq Volcanos</h1>
-
-<table>
+<table id="catalog" class="w3-table w3-striped" style="margin-right:25%;">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Location</th>
       <th>Country</th>
       <th>Latitude</th>
       <th>Longitude</th>
@@ -21,23 +29,20 @@
   <tbody>
     <% @uniq_volcanos.each do |uniq_volcano| %>
       <tr>
-        <td><%= uniq_volcano.Name %></td>
-        <td><%= uniq_volcano.Location %></td>
+        <td><%= link_to uniq_volcano.Name, uniq_volcano %></td>
         <td><%= uniq_volcano.Country %></td>
         <td><%= uniq_volcano.Latitude %></td>
         <td><%= uniq_volcano.Longitude %></td>
         <td><%= uniq_volcano.Elevation %></td>
         <td><%= uniq_volcano.Type %></td>
         <td><%= uniq_volcano.Status %></td>
-        <td><%= uniq_volcano.Time %></td>
-        <td><%= link_to 'Show', uniq_volcano %></td>
-        <td><%= link_to 'Edit', edit_uniq_volcano_path(uniq_volcano) %></td>
-        <td><%= link_to 'Destroy', uniq_volcano, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= uniq_volcano.Price / 1000 %>k$</td>
+        <td><%= button_to 'Add to Cart', line_items_path(uniq_volcano_id: uniq_volcano), remote: true %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'New Uniq Volcano', new_uniq_volcano_path %>
+</div>

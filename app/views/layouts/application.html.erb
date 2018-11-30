@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'uniq_volcanos', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -22,15 +23,15 @@
       <% if logged_in? %>
       <a href="/logout" class="w3-bar-item w3-button">Log out</a>
       <% if admin? %>
-      <a href="/dashboard" class="w3-bar-item w3-button w3-right">Admin dashboard</a>
+      <a href="/dashboard" class="w3-bar-item w3-button">Admin dashboard</a>
       <% end %>
       <% else %>
       <a href="/login" class="w3-bar-item w3-button">Log in</a>
       <% end %>
-      
-      
     </div>
     </div>
+    <div id="bodywrap">
     <%= yield %>
+    </div>
   </body>
 </html>
