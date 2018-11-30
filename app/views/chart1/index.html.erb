@@ -1,1 +1,1 @@
-<%= line_chart Eruption.where("year > ?", 1750).group(:year).count, adapter: "highcharts" %>
+<%= line_chart Eruption.where("\"year\" > ?", 1750).group(:year).count, adapter: "highcharts" %>
