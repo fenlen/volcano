@@ -1,4 +1,5 @@
 class UniqVolcano < ApplicationRecord
+    include RailsAdminCharts
     has_many :eruption
     has_many :line_item
 

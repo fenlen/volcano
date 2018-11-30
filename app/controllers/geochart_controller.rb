@@ -1,0 +1,2 @@
+class GeochartController < ApplicationController
+end

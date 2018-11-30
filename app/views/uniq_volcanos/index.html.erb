@@ -3,14 +3,15 @@
 <%= render @cart %>
 <div class="actions">
 <%= button_to 'Empty cart', @cart, method: :delete,
-    data: { confirm: 'Are you sure?' } %>
-<%= button_to 'Checkout', new_order_path, method: :get, class: "checkout"%>
+    data: { confirm: 'Are you sure?' }, class: "w3-button w3-ripple w3-black w3-hover-blue w3-round-xxlarge" %>
+<%= button_to 'Checkout', new_order_path, method: :get, class: "checkout w3-button w3-ripple w3-black w3-hover-blue w3-round-xxlarge"%>
 </div>
 <% end %>
 </div>
 <div class="volcanowrap">
 <p id="notice"><%= notice %></p>
-<h1>Uniq Volcanos</h1>
+<h1>Volcanoes!</h1>
+<p>Here you can browse our catalogue of volcanoes for sale!</p>
 <table id="catalog" class="w3-table w3-striped" style="margin-right:25%;">
   <thead>
     <tr>
@@ -19,7 +20,7 @@
       <th>Latitude</th>
       <th>Longitude</th>
       <th>Elevation</th>
-      <th>Type</th>
+      <th>Price</th>
       <th>Status</th>
       <th>Time</th>
       <th colspan="3"></th>
@@ -37,12 +38,12 @@
         <td><%= uniq_volcano.Type %></td>
         <td><%= uniq_volcano.Status %></td>
         <td><%= uniq_volcano.Price / 1000 %>k$</td>
-        <td><%= button_to 'Add to Cart', line_items_path(uniq_volcano_id: uniq_volcano), remote: true %>
+        <td><%= button_to 'Add to Cart', line_items_path(uniq_volcano_id: uniq_volcano), remote: true, class: "w3-button w3-ripple w3-black w3-hover-blue w3-round-xxlarge" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
 
-<%= link_to 'New Uniq Volcano', new_uniq_volcano_path %>
 </div>
+

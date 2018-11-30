@@ -24,11 +24,8 @@
   <strong>Eq:</strong>
   <%= @eruption.Eq %>
 </p>
-
 <p>
-  <strong>Deaths:</strong>
-  <%= @eruption.deaths %>
+<strong>Volcano:</strong>
+<%= link_to @eruption.uniq_volcano.Name, @eruption.uniq_volcano %>
 </p>
-
-<%= link_to 'Edit', edit_eruption_path(@eruption) %> |
-<%= link_to 'Back', eruptions_path %>
+<%= link_to 'Back', eruptions_path, class: "w3-button w3-black w3-hover-blue" %>

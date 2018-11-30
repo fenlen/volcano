@@ -13,17 +13,14 @@ module SessionsHelper
  def logged_in?
   if User.find_by(id: session[:user_id])
     return true
-  else
-    # return false
-    #  redirect_to login_url, notice: "Please log in"
    end
   end
 
   def admin?
-    if User.find_by(id: session[:user_id]).admin == true
-      return true
-    else
+    unless User.find_by(id: session[:user_id]).admin == true
       return false
+    else
+      return true
     end
   end
  # Logs out the current user.

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/dashboard', as: 'rails_admin'
   resources :orders
   resources :line_items
   resources :carts
-  get 'dashboard/index'
+  get '/geochart', to: 'geochart#index'
+  get '/chart1', to: 'chart1#index'
   get '/login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'

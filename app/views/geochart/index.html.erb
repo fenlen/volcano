@@ -1,0 +1,5 @@
+<div class="chart">
+<h1>The GeoChart</h1><br>
+<p>Countries sorted by number of volcanoes in them(deeper red => more volcanoes).
+<%= geo_chart UniqVolcano.group(:Country).count, adapter: "google", id: "geochart" %>
+</div>

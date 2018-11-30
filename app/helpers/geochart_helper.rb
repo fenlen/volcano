@@ -1,0 +1,2 @@
+module GeochartHelper
+end

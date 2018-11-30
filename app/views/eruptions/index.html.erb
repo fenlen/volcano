@@ -1,6 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Eruptions</h1>
-
+<table class="w3-table w3-striped">
+    <thead>
+    <tr>
+        <th>Year</th>
+        <th>Volcano's name</th>
+        <th>Country</th>
+        <th>Details</th>
+        <th>Link to volcano</th>
+        <tr>
+        </thead>
+        <tbody>
+        <% @eruptions.each do |eruption| %>
+        <tr>
+        <td> <%= eruption.Year %></td>
+        <td> <%= eruption.uniq_volcano.Name %> </td>
+        <td> <%= eruption.uniq_volcano.Country %> </td>
+        <td> <%= link_to "Details", eruption %> </td>
+        <td> <%= link_to "Volcano page", eruption.uniq_volcano %></td>
+        </tr>
+        <% end %>
+        </tbody>
+</table>
 <br>
 
