@@ -1,7 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Eruptions</h1>
+<div id="eruptions">
 <table class="w3-table w3-striped">
+<input class="search" placeholder="Search" />
+  <button class="sort w3-button w3-black w3-round-xxlarge w3-ripple w3-hover-blue" data-sort="year">
+    Sort by year
+  </button>
+  <button class="sort w3-button w3-black w3-round-xxlarge w3-ripple w3-hover-blue" data-sort="name">
+    Sort by name
+  </button>
+  <button class="sort w3-button w3-black w3-round-xxlarge w3-ripple w3-hover-blue" data-sort="country">
+    Sort by country
+  </button>
     <thead>
     <tr>
         <th>Year</th>
@@ -11,17 +22,25 @@
         <th>Link to volcano</th>
         <tr>
         </thead>
-        <tbody>
+        <tbody class="list">
         <% @eruptions.each do |eruption| %>
         <tr>
-        <td> <%= eruption.Year %></td>
-        <td> <%= eruption.uniq_volcano.Name %> </td>
-        <td> <%= eruption.uniq_volcano.Country %> </td>
+        <td class="year"> <%= eruption.Year %></td>
+        <td class="name"> <%= eruption.uniq_volcano.Name %> </td>
+        <td class="country"> <%= eruption.uniq_volcano.Country %> </td>
         <td> <%= link_to "Details", eruption %> </td>
         <td> <%= link_to "Volcano page", eruption.uniq_volcano %></td>
         </tr>
         <% end %>
         </tbody>
 </table>
+</div>
 <br>
+<script>
+var options = {
+    valueNames: [ 'year', 'name', 'country']
+};
+
+var userList = new List('eruptions', options);
+</script>
 
