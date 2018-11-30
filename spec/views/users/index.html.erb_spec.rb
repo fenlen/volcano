@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.describe "users/index", type: :view do
   before(:each) do
     assign(:users, [
-      User.create!(
-        :name => "Name",
-        :password => "Password1"
-      ),
-      User.create!(
-        :name => "Name2",
-        :password => "Password2"
-      )
+        User.create!(
+            :name => "Name",
+            :password => "Password1"
+        ),
+        User.create!(
+            :name => "Name2",
+            :password => "Password2"
+        )
     ])
   end
 

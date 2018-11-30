@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "orders/show", type: :view do
   before(:each) do
     @order = assign(:order, Order.create!(
-      :name => "Name",
-      :email => "Email"
+        :name => "Name",
+        :email => "Email"
     ))
   end
 

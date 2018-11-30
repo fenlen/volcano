@@ -1,71 +1,70 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <div class="sidebar">
-<% if @cart %>
-<%= render @cart %>
-<div class="actions">
-<%= button_to 'Empty cart', @cart, method: :delete,
-    data: { confirm: 'Are you sure?' }, class: "w3-button w3-ripple w3-black w3-hover-blue w3-round-xxlarge" %>
-<%= button_to 'Checkout', new_order_path, method: :get, class: "checkout w3-button w3-ripple w3-black w3-hover-blue w3-round-xxlarge"%>
-</div>
-<% end %>
+  <% if @cart %>
+    <%= render @cart %>
+    <div class="actions">
+      <%= button_to 'Empty cart', @cart, method: :delete,
+                    data: {confirm: 'Are you sure?'}, class: "w3-button w3-ripple w3-black w3-hover-blue w3-round-xxlarge" %>
+      <%= button_to 'Checkout', new_order_path, method: :get, class: "checkout w3-button w3-ripple w3-black w3-hover-blue w3-round-xxlarge" %>
+    </div>
+  <% end %>
 </div>
 <div class="volcanowrap">
-<p id="notice"><%= notice %></p>
-<h1>Volcanoes!</h1>
-<p>Here you can browse our catalogue of volcanoes for sale!</p>
-<div id="volcanoes">
-<table id="catalog" class="w3-table w3-striped" style="margin-right:25%;">
-<input class="search" placeholder="Search" />
-  <button class="sort w3-button w3-black w3-round-xxlarge w3-ripple w3-hover-blue" data-sort="name">
-    Sort by name
-  </button>
-  <button class="sort w3-button w3-black w3-round-xxlarge w3-ripple w3-hover-blue" data-sort="country">
-    Sort by country
-  </button>
-  <button class="sort w3-button w3-black w3-round-xxlarge w3-ripple w3-hover-blue" data-sort="elevation">
-    Sort by elevation
-  </button>
-  <button class="sort w3-button w3-black w3-round-xxlarge w3-ripple w3-hover-blue" data-sort="price">
-    Sort by price
-  </button>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Country</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Elevation</th>
-      <th>Price</th>
-      <th>Status</th>
-      <th>Time</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody class="list">
-    <% @uniq_volcanos.each do |uniq_volcano| %>
+  <h1>Volcanoes!</h1>
+  <p>Here you can browse our catalogue of volcanoes for sale!</p>
+  <div id="volcanoes">
+    <table id="catalog" class="w3-table w3-striped" style="margin-right:25%;">
+      <input class="search" placeholder="Search"/>
+      <button class="sort w3-button w3-black w3-round-xxlarge w3-ripple w3-hover-blue" data-sort="name">
+        Sort by name
+      </button>
+      <button class="sort w3-button w3-black w3-round-xxlarge w3-ripple w3-hover-blue" data-sort="country">
+        Sort by country
+      </button>
+      <button class="sort w3-button w3-black w3-round-xxlarge w3-ripple w3-hover-blue" data-sort="elevation">
+        Sort by elevation
+      </button>
+      <button class="sort w3-button w3-black w3-round-xxlarge w3-ripple w3-hover-blue" data-sort="price">
+        Sort by price
+      </button>
+      <thead>
       <tr>
-        <td class="name"><%= link_to uniq_volcano.Name, uniq_volcano %></td>
-        <td class="country"><%= uniq_volcano.Country %></td>
-        <td class="latitude"><%= uniq_volcano.Latitude %></td>
-        <td class="longitude"><%= uniq_volcano.Longitude %></td>
-        <td class="elevation"><%= uniq_volcano.Elevation %></td>
-        <td class="type"><%= uniq_volcano.Type %></td>
-        <td class="status"><%= uniq_volcano.Status %></td>
-        <td class="price"><%= uniq_volcano.Price / 1000 %>k$</td>
-        <td><%= button_to 'Add to Cart', line_items_path(uniq_volcano_id: uniq_volcano), remote: true, class: "w3-button w3-ripple w3-black w3-hover-blue w3-round-xxlarge" %></td>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Elevation</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>Time</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
-<br>
+      </thead>
+
+      <tbody class="list">
+      <% @uniq_volcanos.each do |uniq_volcano| %>
+        <tr>
+          <td class="name"><%= link_to uniq_volcano.Name, uniq_volcano %></td>
+          <td class="country"><%= uniq_volcano.Country %></td>
+          <td class="latitude"><%= uniq_volcano.Latitude %></td>
+          <td class="longitude"><%= uniq_volcano.Longitude %></td>
+          <td class="elevation"><%= uniq_volcano.Elevation %></td>
+          <td class="type"><%= uniq_volcano.Type %></td>
+          <td class="status"><%= uniq_volcano.Status %></td>
+          <td class="price"><%= uniq_volcano.Price / 1000 %>k$</td>
+          <td><%= button_to 'Add to Cart', line_items_path(uniq_volcano_id: uniq_volcano), remote: true, class: "w3-button w3-ripple w3-black w3-hover-blue w3-round-xxlarge" %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <br>
 
 </div>
 <script>
-var options = {
-    valueNames: [ 'name', 'country', 'elevation', 'price']
-};
+    var options = {
+        valueNames: ['name', 'country', 'elevation', 'price']
+    };
 
-var userList = new List('volcanoes', options);
+    var userList = new List('volcanoes', options);
 </script>

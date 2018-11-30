@@ -42,6 +42,7 @@ RSpec.describe UsersController, type: :controller do
   def valid_session
     controller.stub(:logged_in?).and_return(true)
   end
+
   describe "GET #index" do
     it "returns a success response" do
       User.create! valid_attributes

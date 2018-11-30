@@ -5,5 +5,5 @@ require_relative 'application'
 Rails.application.initialize!
 
 Volcano::Application.configure do
-    config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :smtp
 end

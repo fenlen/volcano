@@ -1,74 +1,73 @@
 <div class="sidebar">
-<% if @cart %>
-<%= render @cart %>
-<div class="actions">
-<%= button_to 'Empty cart', @cart, method: :delete,
-    data: { confirm: 'Are you sure?' }, class: "w3-button w3-ripple w3-black w3-hover-blue w3-round-xxlarge" %>
-<%= button_to 'Checkout', new_order_path, method: :get, class: "checkout w3-button w3-ripple w3-black w3-hover-blue w3-round-xxlarge"%>
-</div>
-<% end %>
-</div>
-<div class="w3-row">
-<div class="w3-col m5">
-<p>
-  <strong>Name:</strong>
-  <%= @uniq_volcano.Name %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @uniq_volcano.Country %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @uniq_volcano.Latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @uniq_volcano.Longitude %>
-</p>
-
-<p>
-  <strong>Elevation:</strong>
-  <%= @uniq_volcano.Elevation %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @uniq_volcano.Type %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @uniq_volcano.Status %>
-</p>
-
-<p>
-  <strong>Time:</strong>
-  <%= @uniq_volcano.Time %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @uniq_volcano.Price %>$
-</p>
-</div>
-<div class="w3-col m3">
-<h3>Recorded eruptions of this volcano:</h3>
-<% @uniq_volcano.eruption.each do |eruption| %>
-  <p>
-  <%= link_to eruption.Year, eruption %>
-  </p>
+  <% if @cart %>
+    <%= render @cart %>
+    <div class="actions">
+      <%= button_to 'Empty cart', @cart, method: :delete,
+                    data: {confirm: 'Are you sure?'}, class: "w3-button w3-ripple w3-black w3-hover-blue w3-round-xxlarge" %>
+      <%= button_to 'Checkout', new_order_path, method: :get, class: "checkout w3-button w3-ripple w3-black w3-hover-blue w3-round-xxlarge" %>
+    </div>
   <% end %>
 </div>
+<div class="w3-row">
+  <div class="w3-col m5">
+    <p>
+      <strong>Name:</strong>
+      <%= @uniq_volcano.Name %>
+    </p>
 
+    <p>
+      <strong>Country:</strong>
+      <%= @uniq_volcano.Country %>
+    </p>
+
+    <p>
+      <strong>Latitude:</strong>
+      <%= @uniq_volcano.Latitude %>
+    </p>
+
+    <p>
+      <strong>Longitude:</strong>
+      <%= @uniq_volcano.Longitude %>
+    </p>
+
+    <p>
+      <strong>Elevation:</strong>
+      <%= @uniq_volcano.Elevation %>
+    </p>
+
+    <p>
+      <strong>Type:</strong>
+      <%= @uniq_volcano.Type %>
+    </p>
+
+    <p>
+      <strong>Status:</strong>
+      <%= @uniq_volcano.Status %>
+    </p>
+
+    <p>
+      <strong>Time:</strong>
+      <%= @uniq_volcano.Time %>
+    </p>
+
+    <p>
+      <strong>Price:</strong>
+      <%= @uniq_volcano.Price %>$
+    </p>
+  </div>
+  <div class="w3-col m3">
+    <h3>Recorded eruptions of this volcano:</h3>
+    <% @uniq_volcano.eruption.each do |eruption| %>
+      <p>
+        <%= link_to eruption.Year, eruption %>
+      </p>
+    <% end %>
+  </div>
 
 
 </div>
 </div>
 <div class="w3-row">
-<%= link_to 'Back', uniq_volcanos_path, class: "w3-button w3-ripple w3-black w3-hover-blue w3-round-xxlarge" %>
-<%= button_to 'Add to Cart', line_items_path(uniq_volcano_id: @uniq_volcano), remote: true, class: "w3-button w3-ripple w3-black w3-hover-blue w3-round-xxlarge", style: "position: relative; right: 0" %>
+  <%= link_to 'Back', uniq_volcanos_path, class: "w3-button w3-ripple w3-black w3-hover-blue w3-round-xxlarge" %>
+  <%= button_to 'Add to Cart', line_items_path(uniq_volcano_id: @uniq_volcano), remote: true, class: "w3-button w3-ripple w3-black w3-hover-blue w3-round-xxlarge", style: "position: relative; right: 0" %>
 </div>

@@ -4,9 +4,9 @@
       <h2><%= pluralize(uniq_volcano.errors.count, "error") %> prohibited this uniq_volcano from being saved:</h2>
 
       <ul>
-      <% uniq_volcano.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% uniq_volcano.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>

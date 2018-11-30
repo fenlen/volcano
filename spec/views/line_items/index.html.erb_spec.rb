@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.describe "line_items/index", type: :view do
   before(:each) do
     assign(:line_items, [
-      LineItem.create!(
-        :uniq_volcano => nil,
-        :cart => nil
-      ),
-      LineItem.create!(
-        :uniq_volcano => nil,
-        :cart => nil
-      )
+        LineItem.create!(
+            :uniq_volcano => nil,
+            :cart => nil
+        ),
+        LineItem.create!(
+            :uniq_volcano => nil,
+            :cart => nil
+        )
     ])
   end
 

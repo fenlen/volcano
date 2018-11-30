@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "orders/new", type: :view do
   before(:each) do
     assign(:order, Order.new(
-      :name => "MyString",
-      :email => "MyString"
+        :name => "MyString",
+        :email => "MyString"
     ))
   end
 

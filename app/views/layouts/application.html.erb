@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Volcano</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'uniq_volcanos', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Volcano</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'uniq_volcanos', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <div id="header">
-    <div>
-      <img class="banner" src="/assets/banner.png">
-    </div>
-    <div class="w3-bar w3-black">
-      <a href="/" class="w3-bar-item w3-button w3-ripple w3-black w3-hover-blue">Home</a>
-      <a href="/uniq_volcanos" class="w3-bar-item w3-button w3-ripple w3-black w3-hover-blue">Volcanoes</a>
-      <a href="/eruptions" class="w3-bar-item w3-button w3-ripple w3-black w3-hover-blue">Eruptions</a>
-      <a href="/geochart" class="w3-bar-item w3-button w3-ripple w3-black w3-hover-blue">GeoChart</a>
-      <a href="/chart1" class="w3-bar-item w3-button w3-ripple w3-black w3-hover-blue">EruptionChart</a>
-      <% if logged_in? %>
+<body>
+<div id="header">
+  <div>
+    <img class="banner" src="/assets/banner.png">
+  </div>
+  <div class="w3-bar w3-black">
+    <a href="/" class="w3-bar-item w3-button w3-ripple w3-black w3-hover-blue">Home</a>
+    <a href="/uniq_volcanos" class="w3-bar-item w3-button w3-ripple w3-black w3-hover-blue">Volcanoes</a>
+    <a href="/eruptions" class="w3-bar-item w3-button w3-ripple w3-black w3-hover-blue">Eruptions</a>
+    <a href="/geochart" class="w3-bar-item w3-button w3-ripple w3-black w3-hover-blue">GeoChart</a>
+    <a href="/chart1" class="w3-bar-item w3-button w3-ripple w3-black w3-hover-blue">EruptionChart</a>
+    <% if logged_in? %>
       <a href="/logout" class="w3-bar-item w3-button w3-ripple w3-black w3-hover-blue">Log out</a>
       <% if admin? %>
-      <a href="/dashboard" class="w3-bar-item w3-button w3-ripple w3-black w3-hover-blue">Admin dashboard</a>
+        <a href="/dashboard" class="w3-bar-item w3-button w3-ripple w3-black w3-hover-blue">Admin dashboard</a>
       <% end %>
-      <% else %>
-       <button onclick="document.getElementById('Login').style.display='block'" class="w3-bar-item w3-button w3-ripple w3-black w3-hover-blue">Login</button>
-      <% end %>
-    </div>
-    </div>
-    <div id="bodywrap">
-    <%= yield %>
-    </div>
-    
+    <% else %>
+      <button onclick="document.getElementById('Login').style.display='block'" class="w3-bar-item w3-button w3-ripple w3-black w3-hover-blue">Login</button>
+    <% end %>
+  </div>
+</div>
+<div id="bodywrap">
+  <%= yield %>
+</div>
+
 <div id="Login" class="w3-modal">
   <div class="w3-modal-content w3-animate-top">
     <div class="w3-container" style="background-color:#dde2ee">
       <span onclick="document.getElementById('Login').style.display='none'" class="w3-button w3-display-topright">&times;</span>
       <h2>Login</h2>
-        <div class="w3-container">
-          <%= form_for(:session, url: login_path) do |f| %>
+      <div class="w3-container">
+        <%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+          <%= f.label :name %>
+          <%= f.text_field :name %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
-        </div>
+          <%= f.submit "Log in", class: "btn btn-primary" %>
+        <% end %>
+      </div>
       <div class="w3-container">
         <p> You don't have an account? <a href="/users/new" class="link w3-text-blue">Create Account!</a></p>
       </div>
-      </div>
+    </div>
   </div>
 </div>
 
-  </body>
+</body>
 </html>

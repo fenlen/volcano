@@ -25,7 +25,7 @@
   <%= @eruption.Eq %>
 </p>
 <p>
-<strong>Volcano:</strong>
-<%= link_to @eruption.uniq_volcano.Name, @eruption.uniq_volcano %>
+  <strong>Volcano:</strong>
+  <%= link_to @eruption.uniq_volcano.Name, @eruption.uniq_volcano %>
 </p>
 <%= link_to 'Back', eruptions_path, class: "w3-button w3-black w3-hover-blue" %>

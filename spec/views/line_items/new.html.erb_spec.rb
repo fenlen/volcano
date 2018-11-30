@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "line_items/new", type: :view do
   before(:each) do
     assign(:line_item, LineItem.new(
-      :uniq_volcano => nil,
-      :cart => nil
+        :uniq_volcano => nil,
+        :cart => nil
     ))
   end
 

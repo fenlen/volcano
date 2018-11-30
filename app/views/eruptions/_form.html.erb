@@ -4,9 +4,9 @@
       <h2><%= pluralize(eruption.errors.count, "error") %> prohibited this eruption from being saved:</h2>
 
       <ul>
-      <% eruption.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% eruption.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
