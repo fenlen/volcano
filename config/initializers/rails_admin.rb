@@ -1,7 +1,9 @@
 RailsAdmin.config do |config|
 
   ### Popular gems integration
-
+  config.authorize_with do
+    redirect_to main_app.root_path unless User.find_by(id: session[:user_id]).admin == true || User.find_by(id: session[:user_id]).name == "admin"
+  end
   ## == Devise ==
   # config.authenticate_with do
   #   warden.authenticate! scope: :user

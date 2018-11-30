@@ -17,7 +17,7 @@ module SessionsHelper
   end
 
   def admin?
-    unless User.find_by(id: session[:user_id]).admin == true
+    unless current_user.admin == true || current_user.name == "admin"
       return false
     else
       return true
